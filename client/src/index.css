@@ -43,75 +43,75 @@
 }
 
 :root {
-  /* Modern Tech Minimalism - Deep Charcoal & Cyan */
-  --primary: #00d9ff;
-  --primary-foreground: #1a1a1a;
-  --sidebar-primary: #00d9ff;
-  --sidebar-primary-foreground: #1a1a1a;
-  --chart-1: #00d9ff;
-  --chart-2: #00a8cc;
-  --chart-3: #0080a0;
-  --chart-4: #005a78;
-  --chart-5: #003a50;
-  --radius: 0.5rem;
+  /* Gvstudios Brand - Orange/Amber & Black */
+  --primary: #FFA500;
+  --primary-foreground: #000000;
+  --sidebar-primary: #FFA500;
+  --sidebar-primary-foreground: #000000;
+  --chart-1: #FFA500;
+  --chart-2: #FF8C00;
+  --chart-3: #FF7F00;
+  --chart-4: #FF6B00;
+  --chart-5: #FF5500;
+  --radius: 0.75rem;
   --background: #ffffff;
   --foreground: #1a1a1a;
-  --card: #f8f9fa;
+  --card: #f9f9f9;
   --card-foreground: #1a1a1a;
   --popover: #ffffff;
   --popover-foreground: #1a1a1a;
-  --secondary: #ffa500;
-  --secondary-foreground: #1a1a1a;
-  --muted: #e0e0e0;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #ffffff;
+  --muted: #e8e8e8;
   --muted-foreground: #666666;
-  --accent: #00d9ff;
-  --accent-foreground: #1a1a1a;
+  --accent: #FFA500;
+  --accent-foreground: #000000;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #e0e0e0;
-  --input: #f8f9fa;
-  --ring: #00d9ff;
+  --input: #f9f9f9;
+  --ring: #FFA500;
   --sidebar: #ffffff;
   --sidebar-foreground: #1a1a1a;
-  --sidebar-accent: #00d9ff;
-  --sidebar-accent-foreground: #1a1a1a;
+  --sidebar-accent: #FFA500;
+  --sidebar-accent-foreground: #000000;
   --sidebar-border: #e0e0e0;
-  --sidebar-ring: #00d9ff;
+  --sidebar-ring: #FFA500;
 }
 
 .dark {
-  --primary: #00d9ff;
-  --primary-foreground: #1a1a1a;
-  --sidebar-primary: #00d9ff;
-  --sidebar-primary-foreground: #1a1a1a;
-  --background: #1a1a1a;
+  --primary: #FFA500;
+  --primary-foreground: #000000;
+  --sidebar-primary: #FFA500;
+  --sidebar-primary-foreground: #000000;
+  --background: #0a0a0a;
   --foreground: #ffffff;
-  --card: #2a2a2a;
+  --card: #1a1a1a;
   --card-foreground: #ffffff;
-  --popover: #2a2a2a;
+  --popover: #1a1a1a;
   --popover-foreground: #ffffff;
-  --secondary: #ffa500;
-  --secondary-foreground: #1a1a1a;
-  --muted: #404040;
+  --secondary: #ffffff;
+  --secondary-foreground: #0a0a0a;
+  --muted: #333333;
   --muted-foreground: #b0b0b0;
-  --accent: #00d9ff;
-  --accent-foreground: #1a1a1a;
+  --accent: #FFA500;
+  --accent-foreground: #000000;
   --destructive: #f87171;
-  --destructive-foreground: #1a1a1a;
-  --border: #333333;
-  --input: #2a2a2a;
-  --ring: #00d9ff;
-  --chart-1: #00d9ff;
-  --chart-2: #00a8cc;
-  --chart-3: #0080a0;
-  --chart-4: #005a78;
-  --chart-5: #003a50;
-  --sidebar: #2a2a2a;
+  --destructive-foreground: #0a0a0a;
+  --border: #2a2a2a;
+  --input: #1a1a1a;
+  --ring: #FFA500;
+  --chart-1: #FFA500;
+  --chart-2: #FF8C00;
+  --chart-3: #FF7F00;
+  --chart-4: #FF6B00;
+  --chart-5: #FF5500;
+  --sidebar: #1a1a1a;
   --sidebar-foreground: #ffffff;
-  --sidebar-accent: #00d9ff;
-  --sidebar-accent-foreground: #1a1a1a;
-  --sidebar-border: #333333;
-  --sidebar-ring: #00d9ff;
+  --sidebar-accent: #FFA500;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #2a2a2a;
+  --sidebar-ring: #FFA500;
 }
 
 @layer base {
@@ -134,7 +134,7 @@
     @apply cursor-pointer;
   }
 
-  /* Typography - Modern Tech Minimalism */
+  /* Typography - AI-focused, bold and modern */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Mono', monospace;
     font-weight: 700;
@@ -162,7 +162,7 @@
     font-weight: 400;
   }
 
-  /* Accent bar styling */
+  /* Accent bar styling - Orange */
   .accent-bar {
     @apply absolute left-0 top-0 w-1 h-12 bg-accent;
   }
@@ -177,16 +177,6 @@
 @layer components {
   /**
    * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
    */
   .container {
     width: 100%;
@@ -216,7 +206,7 @@
     }
   }
 
-  /* Modern Tech Minimalism Components */
+  /* Gvstudios Brand Components - Orange & Black */
   .service-card {
     @apply relative p-6 md:p-8 bg-card text-card-foreground border border-border rounded-lg transition-all duration-300 hover:shadow-lg hover:border-accent;
   }
@@ -256,5 +246,24 @@
 
   .geometric-accent {
     @apply w-12 h-1 bg-accent mb-6;
+  }
+
+  /* AI-themed gradient backgrounds */
+  .ai-gradient-bg {
+    @apply relative overflow-hidden;
+    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+  }
+
+  .ai-gradient-dark {
+    @apply relative overflow-hidden;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  }
+
+  /* Neural network pattern */
+  .neural-pattern {
+    @apply relative;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(255, 165, 0, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255, 165, 0, 0.05) 0%, transparent 50%);
   }
 }

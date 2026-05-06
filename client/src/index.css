@@ -48,34 +48,34 @@
   --primary-foreground: #000000;
   --sidebar-primary: #FFA500;
   --sidebar-primary-foreground: #000000;
-  --chart-1: #FFA500;
-  --chart-2: #FF8C00;
-  --chart-3: #FF7F00;
-  --chart-4: #FF6B00;
-  --chart-5: #FF5500;
-  --radius: 0.75rem;
-  --background: #ffffff;
-  --foreground: #1a1a1a;
-  --card: #f9f9f9;
-  --card-foreground: #1a1a1a;
-  --popover: #ffffff;
-  --popover-foreground: #1a1a1a;
-  --secondary: #1a1a1a;
-  --secondary-foreground: #ffffff;
-  --muted: #e8e8e8;
-  --muted-foreground: #666666;
+  --chart-1: #FFB84D;
+  --chart-2: #FFA500;
+  --chart-3: #FF9500;
+  --chart-4: #FF8500;
+  --chart-5: #FF7500;
+  --radius: 0.65rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.235 0.015 65);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.235 0.015 65);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.235 0.015 65);
+  --secondary: oklch(0.98 0.001 286.375);
+  --secondary-foreground: oklch(0.4 0.015 65);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
   --accent: #FFA500;
   --accent-foreground: #000000;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --border: #e0e0e0;
-  --input: #f9f9f9;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
   --ring: #FFA500;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #1a1a1a;
-  --sidebar-accent: #FFA500;
-  --sidebar-accent-foreground: #000000;
-  --sidebar-border: #e0e0e0;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.235 0.015 65);
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: #FFA500;
 }
 
@@ -84,33 +84,33 @@
   --primary-foreground: #000000;
   --sidebar-primary: #FFA500;
   --sidebar-primary-foreground: #000000;
-  --background: #0a0a0a;
-  --foreground: #ffffff;
-  --card: #1a1a1a;
-  --card-foreground: #ffffff;
-  --popover: #1a1a1a;
-  --popover-foreground: #ffffff;
-  --secondary: #ffffff;
-  --secondary-foreground: #0a0a0a;
-  --muted: #333333;
-  --muted-foreground: #b0b0b0;
+  --background: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.85 0.005 65);
+  --card: oklch(0.21 0.006 285.885);
+  --card-foreground: oklch(0.85 0.005 65);
+  --popover: oklch(0.21 0.006 285.885);
+  --popover-foreground: oklch(0.85 0.005 65);
+  --secondary: oklch(0.24 0.006 286.033);
+  --secondary-foreground: oklch(0.7 0.005 65);
+  --muted: oklch(0.274 0.006 286.033);
+  --muted-foreground: oklch(0.705 0.015 286.067);
   --accent: #FFA500;
   --accent-foreground: #000000;
-  --destructive: #f87171;
-  --destructive-foreground: #0a0a0a;
-  --border: #2a2a2a;
-  --input: #1a1a1a;
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
   --ring: #FFA500;
-  --chart-1: #FFA500;
-  --chart-2: #FF8C00;
-  --chart-3: #FF7F00;
-  --chart-4: #FF6B00;
-  --chart-5: #FF5500;
-  --sidebar: #1a1a1a;
-  --sidebar-foreground: #ffffff;
-  --sidebar-accent: #FFA500;
-  --sidebar-accent-foreground: #000000;
-  --sidebar-border: #2a2a2a;
+  --chart-1: #FFB84D;
+  --chart-2: #FFA500;
+  --chart-3: #FF9500;
+  --chart-4: #FF8500;
+  --chart-5: #FF7500;
+  --sidebar: oklch(0.21 0.006 285.885);
+  --sidebar-foreground: oklch(0.85 0.005 65);
+  --sidebar-accent: oklch(0.274 0.006 286.033);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: #FFA500;
 }
 
@@ -118,10 +118,71 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  /* Typography System - Octaloop Style (League Spartan + Inter) */
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'League Spartan', system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  h3 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h4 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  h5 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  h6 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  p {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  small {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -134,55 +195,41 @@
     @apply cursor-pointer;
   }
 
-  /* Typography - AI-focused, bold and modern */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Mono', monospace;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+  /* Button Typography */
+  button, [role="button"] {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
   }
 
-  h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+  /* Link Typography */
+  a {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 500;
   }
 
-  h2 {
-    @apply text-3xl md:text-4xl font-bold;
-  }
-
-  h3 {
-    @apply text-2xl md:text-3xl font-bold;
-  }
-
-  h4 {
-    @apply text-xl md:text-2xl font-bold;
-  }
-
-  p {
-    @apply text-base md:text-lg leading-relaxed;
-    font-weight: 400;
-  }
-
-  /* Accent bar styling - Orange */
-  .accent-bar {
-    @apply absolute left-0 top-0 w-1 h-12 bg-accent;
-  }
-
-  /* Geometric divider */
-  .diagonal-divider {
-    @apply relative h-32 bg-gradient-to-b from-background to-muted;
-    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
+  /* Responsive typography */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 48px;
+    }
+    h2 {
+      font-size: 36px;
+    }
+    h3 {
+      font-size: 24px;
+    }
   }
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -193,16 +240,16 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
   }
 
@@ -237,11 +284,17 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6;
+    font-family: 'League Spartan', system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   .section-subtitle {
     @apply text-lg md:text-xl text-muted-foreground mb-8 md:mb-12;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
   }
 
   .geometric-accent {
@@ -375,34 +428,6 @@
   }
 }
 
-@keyframes bounce-in {
-  0% {
-    opacity: 0;
-    transform: scale(0.3);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  70% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* Animation utility classes */
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
@@ -436,14 +461,6 @@
   animation: pulse-border 2s ease-in-out infinite;
 }
 
-.animate-bounce-in {
-  animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-}
-
-.animate-slide-up {
-  animation: slide-up 0.7s ease-out forwards;
-}
-
 /* Stagger animations */
 .stagger-item:nth-child(1) { animation-delay: 0.1s; }
 .stagger-item:nth-child(2) { animation-delay: 0.2s; }
@@ -451,53 +468,6 @@
 .stagger-item:nth-child(4) { animation-delay: 0.4s; }
 .stagger-item:nth-child(5) { animation-delay: 0.5s; }
 .stagger-item:nth-child(6) { animation-delay: 0.6s; }
-
-/* Enhanced service card with advanced animations */
-.service-card-enhanced {
-  @apply relative p-6 md:p-8 bg-card text-card-foreground border border-border rounded-lg transition-all duration-500;
-  animation: fadeInUp 0.6s ease-out forwards;
-  overflow: hidden;
-}
-
-.service-card-enhanced::before {
-  @apply absolute left-0 top-0 w-1 h-12 bg-accent;
-  content: '';
-  transition: height 0.3s ease;
-}
-
-.service-card-enhanced::after {
-  content: '';
-  @apply absolute inset-0 bg-gradient-to-br from-accent/0 via-accent/0 to-accent/5 opacity-0 transition-opacity duration-300;
-}
-
-.service-card-enhanced:hover {
-  @apply border-accent shadow-2xl;
-  transform: translateY(-8px);
-}
-
-.service-card-enhanced:hover::before {
-  height: 100%;
-}
-
-.service-card-enhanced:hover::after {
-  @apply opacity-100;
-}
-
-/* Interactive button animations */
-.btn-interactive {
-  @apply relative overflow-hidden transition-all duration-300;
-}
-
-.btn-interactive::before {
-  content: '';
-  @apply absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 transition-opacity duration-300;
-  transform: translateX(-100%);
-}
-
-.btn-interactive:hover::before {
-  @apply opacity-20;
-  animation: shimmer 0.6s ease-in-out;
-}
 
 /* Scroll reveal animations */
 .scroll-reveal {
@@ -511,25 +481,6 @@
   transform: translateY(0);
 }
 
-/* Gradient text animation */
-.gradient-text-animated {
-  background: linear-gradient(90deg, #FFA500, #FF8C00, #FFA500);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient-shift 3s linear infinite;
-}
-
-/* Icon animation */
-.icon-bounce {
-  animation: float 2s ease-in-out infinite;
-}
-
-.icon-bounce:hover {
-  animation: float 1s ease-in-out infinite;
-}
-
 /* Hover lift effect */
 .hover-lift {
   @apply transition-all duration-300;
@@ -540,28 +491,12 @@
   @apply shadow-2xl;
 }
 
-/* Accent line animation */
-.accent-line-animated {
-  @apply w-12 h-1 bg-accent mb-6;
-  animation: slideInDown 0.6s ease-out;
-}
-
-/* Smooth transitions for all interactive elements */
+/* Smooth transitions */
 button, a, [role="button"] {
   @apply transition-all duration-300 ease-out;
 }
 
-/* Text reveal animation */
-.text-reveal {
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.text-reveal:nth-child(1) { animation-delay: 0.1s; }
-.text-reveal:nth-child(2) { animation-delay: 0.2s; }
-.text-reveal:nth-child(3) { animation-delay: 0.3s; }
-
-/* Parallax effect for hero sections */
+/* Parallax effect */
 .parallax-bg {
   background-attachment: fixed;
   background-position: center;
@@ -569,99 +504,27 @@ button, a, [role="button"] {
   background-size: cover;
 }
 
-/* Card hover with border glow */
-.card-hover-glow {
-  @apply transition-all duration-300;
-  border: 2px solid rgba(255, 165, 0, 0.3);
-}
-
-.card-hover-glow:hover {
-  border-color: rgba(255, 165, 0, 0.8);
-  box-shadow: 0 0 20px rgba(255, 165, 0, 0.3), inset 0 0 20px rgba(255, 165, 0, 0.05);
-}
-
-/* Gradient border animation */
-.gradient-border {
-  position: relative;
-  background: white;
-  border: 2px solid transparent;
-  background-clip: padding-box;
-}
-
-.gradient-border::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
+/* Gradient text animation */
+.gradient-text-animated {
   background: linear-gradient(90deg, #FFA500, #FF8C00, #FFA500);
-  border-radius: inherit;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s linear infinite;
 }
 
-.gradient-border:hover::before {
-  opacity: 1;
+/* Icon bounce animation */
+.icon-bounce {
+  animation: float 2s ease-in-out infinite;
 }
 
-/* Number counter animation */
-.number-counter {
-  @apply font-bold text-accent text-4xl md:text-5xl lg:text-6xl font-mono;
-  animation: fadeInUp 0.6s ease-out forwards;
+.icon-bounce:hover {
+  animation: float 1s ease-in-out infinite;
 }
 
-/* Section fade-in on scroll */
-.section-fade-in {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.section-fade-in.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Smooth page transitions */
-.page-transition {
-  animation: fadeInUp 0.5s ease-out;
-}
-
-/* Hover scale effect for images */
-.image-hover-scale {
-  @apply transition-transform duration-300 overflow-hidden rounded-lg;
-}
-
-.image-hover-scale:hover {
-  transform: scale(1.05);
-}
-
-/* Tooltip animation */
-.tooltip-animated {
-  @apply opacity-0 pointer-events-none transition-opacity duration-200;
-}
-
-.tooltip-animated.visible {
-  @apply opacity-100 pointer-events-auto;
-}
-
-/* Loading animation */
-@keyframes spin-smooth {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.spin-smooth {
-  animation: spin-smooth 2s linear infinite;
-}
-
-/* Fade in on load */
-.fade-in-on-load {
-  animation: fadeInUp 0.8s ease-out;
+/* Accent line animation */
+.accent-line-animated {
+  @apply w-12 h-1 bg-accent mb-6;
+  animation: slideInDown 0.6s ease-out;
 }

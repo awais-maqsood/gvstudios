@@ -59,16 +59,16 @@ export default function Home() {
   ];
 
   const services = [
-    { icon: "🧠", title: "Machine Learning", desc: "Predictive models and intelligent automation" },
-    { icon: "⚡", title: "Deep Learning", desc: "Neural networks for vision and NLP" },
-    { icon: "🤖", title: "AI Automation", desc: "Process automation and RPA" },
-    { icon: "💾", title: "Data Engineering", desc: "Pipelines and data infrastructure" },
-    { icon: "🔒", title: "AI Governance", desc: "Compliance and responsible AI" },
-    { icon: "💡", title: "AI Consulting", desc: "Strategy and transformation" },
-    { icon: "📊", title: "Analytics", desc: "Business intelligence and insights" },
-    { icon: "🔍", title: "Computer Vision", desc: "Image and video analysis" },
-    { icon: "💬", title: "NLP", desc: "Language understanding and generation" },
-    { icon: "🌐", title: "Embeddings", desc: "Vector databases and retrieval" }
+    { icon: "</>", title: "Software Development", desc: "Custom web apps, SaaS platforms, and enterprise software built to scale.", bgColor: "bg-blue-600" },
+    { icon: "📱", title: "Mobile App Development", desc: "Native and cross-platform iOS, Android & Flutter apps.", bgColor: "bg-blue-500" },
+    { icon: "☁️", title: "Cloud & DevOps", desc: "AWS, Azure, GCP infrastructure with CI/CD and Kubernetes.", bgColor: "bg-teal-500" },
+    { icon: "👥", title: "IT Staffing", desc: "Dedicated developers and full agile teams on demand.", bgColor: "bg-purple-600" },
+    { icon: "🏢", title: "IT Consultancy", desc: "Strategic advisory, architecture reviews, and digital transformation.", bgColor: "bg-indigo-600" },
+    { icon: "🔐", title: "Cybersecurity", desc: "Threat detection, zero-trust, and compliance solutions.", bgColor: "bg-red-500" },
+    { icon: "🧠", title: "Artificial Intelligence", desc: "ML, NLP, Computer Vision, and Generative AI.", bgColor: "bg-green-500" },
+    { icon: "🔄", title: "Digital Twin", desc: "Virtual replicas for predictive maintenance and simulation.", bgColor: "bg-blue-500" },
+    { icon: "🌍", title: "GIS & Geospatial", desc: "Location intelligence, mapping, and terrain analysis.", bgColor: "bg-teal-600" },
+    { icon: "🤖", title: "Embodied AI", desc: "AI-powered robotics with sensory perception and autonomy.", bgColor: "bg-pink-500" }
   ];
 
   const industries = [
@@ -217,43 +217,46 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services Section */}
+        {/* Services Section - Engineering Digital Transformation */}
         <section id="services" className="py-16 md:py-24 bg-white">
           <div className="container">
             <div className="text-center mb-16">
-              <p className="text-amber-500 font-semibold text-sm uppercase tracking-wider mb-4">WHAT WE DO</p>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 Engineering Digital <span className="text-amber-500">Transformation</span>
               </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                End-to-end AI solutions, from machine learning and deep learning to autonomous systems and enterprise infrastructure.
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                End-to-end technology solutions, from AI and blockchain to immersive AR and enterprise infrastructure, for startups and Fortune 500s alike.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-5 gap-4 mb-8">
+            <div className="grid md:grid-cols-5 gap-6 mb-6">
               {services.slice(0, 5).map((service, idx) => (
                 <div
                   key={service.title}
-                  className="border-2 border-dashed border-amber-300 rounded-lg p-6 hover:border-amber-500 hover:shadow-lg transition-all duration-300 stagger-item animate-fade-in-up"
+                  className="border border-gray-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 stagger-item animate-fade-in-up"
                   style={{ animationDelay: `${idx * 0.1}s` }}
                 >
-                  <div className="text-4xl mb-3">{service.icon}</div>
-                  <h3 className="font-bold text-black mb-2">{service.title}</h3>
-                  <p className="text-sm text-gray-600">{service.desc}</p>
+                  <div className={`${service.bgColor} w-16 h-16 rounded-lg flex items-center justify-center mb-6 text-white text-2xl font-bold`}>
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-black mb-3">{service.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{service.desc}</p>
                 </div>
               ))}
             </div>
 
-            <div className="grid md:grid-cols-5 gap-4">
+            <div className="grid md:grid-cols-5 gap-6">
               {services.slice(5).map((service, idx) => (
                 <div
                   key={service.title}
-                  className="border-2 border-dashed border-amber-300 rounded-lg p-6 hover:border-amber-500 hover:shadow-lg transition-all duration-300 stagger-item animate-fade-in-up"
+                  className="border border-gray-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 stagger-item animate-fade-in-up"
                   style={{ animationDelay: `${(idx + 5) * 0.1}s` }}
                 >
-                  <div className="text-4xl mb-3">{service.icon}</div>
-                  <h3 className="font-bold text-black mb-2">{service.title}</h3>
-                  <p className="text-sm text-gray-600">{service.desc}</p>
+                  <div className={`${service.bgColor} w-16 h-16 rounded-lg flex items-center justify-center mb-6 text-white text-2xl font-bold`}>
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-black mb-3">{service.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{service.desc}</p>
                 </div>
               ))}
             </div>

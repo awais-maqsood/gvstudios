@@ -186,6 +186,37 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Fueling Success Section */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="container max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-black">
+              Fueling Success Through Innovative <span className="text-amber-500">Technology Solutions</span>
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 mb-16 leading-relaxed">
+              At Gvstudios, we transform the way organizations operate through innovative technology services spanning AI, Machine Learning, Data Engineering, and beyond. Our expertise fuels growth, enhances efficiency, and drives measurable success across industries.
+            </p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+              <div className="text-center stagger-item animate-fade-in-up">
+                <div className="text-5xl md:text-6xl font-bold text-amber-500 mb-3 font-mono">2500+</div>
+                <p className="text-gray-600 font-semibold text-base">Projects Delivered</p>
+              </div>
+              <div className="text-center stagger-item animate-fade-in-up">
+                <div className="text-5xl md:text-6xl font-bold text-amber-500 mb-3 font-mono">800+</div>
+                <p className="text-gray-600 font-semibold text-base">Clients Worldwide</p>
+              </div>
+              <div className="text-center stagger-item animate-fade-in-up">
+                <div className="text-5xl md:text-6xl font-bold text-amber-500 mb-3 font-mono">20+</div>
+                <p className="text-gray-600 font-semibold text-base">Industries Served</p>
+              </div>
+              <div className="text-center stagger-item animate-fade-in-up">
+                <div className="text-5xl md:text-6xl font-bold text-amber-500 mb-3 font-mono">280+</div>
+                <p className="text-gray-600 font-semibold text-base">Tech Experts</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Services Section */}
         <section id="services" className="py-16 md:py-24 bg-white">
           <div className="container">

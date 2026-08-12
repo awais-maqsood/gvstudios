@@ -218,8 +218,8 @@ export default function Home() {
   ];
 
   const leaders = [
-    { name: "Awais Maqsood", role: "Founder & CEO", expertise: "AI Architecture & Strategy", image: "/awais-maqsood.png" },
-    { name: "Waleed Waheed", role: "Founder & CTO", expertise: "ML Engineering & Infrastructure", image: "/waleed-waheed.png" },
+    { name: "Awais Maqsood", role: "Founder & CEO", expertise: "AI Architecture & Strategy", image: `${import.meta.env.BASE_URL}awais-maqsood.png` },
+    { name: "Waleed Waheed", role: "Founder & CTO", expertise: "ML Engineering & Infrastructure", image: `${import.meta.env.BASE_URL}waleed-waheed.png` },
   ];
 
   const industryMenuIcons = [
@@ -278,7 +278,7 @@ export default function Home() {
       <nav className="sticky top-0 z-50 bg-white border-b-2 border-orange-200 animate-slide-in-down">
         <div className="container flex items-center justify-between py-4 md:py-6">
           <div className="flex items-center">
-            <img src="/gv-logo.png" alt="Gvstudios logo" className="h-12 w-auto md:h-14" />
+            <img src={`${import.meta.env.BASE_URL}gv-logo.png`} alt="Gvstudios logo" className="h-12 w-auto md:h-14" />
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm">
             <div
@@ -943,7 +943,7 @@ export default function Home() {
         <div className="container">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div className="animate-fade-in-up">
-              <img src="/gv-logo.png" alt="Gvstudios logo" className="h-14 w-auto mb-4" />
+              <img src={`${import.meta.env.BASE_URL}gv-logo.png`} alt="Gvstudios logo" className="h-14 w-auto mb-4" />
               <h4 className="font-bold mb-4 text-amber-500">Gvstudios</h4>
               <p className="text-white/70 text-sm">
                 Enterprise AI solutions for the next generation of intelligent systems.

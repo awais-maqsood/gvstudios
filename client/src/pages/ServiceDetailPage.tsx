@@ -18,7 +18,7 @@ export default function ServiceDetailPage() {
       <nav className="sticky top-0 z-50 bg-white border-b-2 border-orange-200">
         <div className="container flex items-center justify-between py-4 md:py-6">
           <Link href="/" className="flex items-center">
-            <img src="/gv-logo.png" alt="Gvstudios logo" className="h-12 w-auto md:h-14" />
+            <img src={`${import.meta.env.BASE_URL}gv-logo.png`} alt="Gvstudios logo" className="h-12 w-auto md:h-14" />
           </Link>
           <Button asChild className="bg-amber-500 hover:bg-amber-600 text-black font-semibold">
             <Link href="/">Back to Home</Link>

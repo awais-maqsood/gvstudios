@@ -288,7 +288,7 @@ export default function Home() {
             >
               <button
                 type="button"
-                className="text-black hover:text-amber-500 transition-colors"
+                className="text-sm font-medium tracking-normal normal-case text-black hover:text-amber-500 transition-colors"
                 onClick={() => {
                   window.location.hash = "services";
                   setIsServicesMenuOpen((prev) => !prev);
@@ -332,7 +332,7 @@ export default function Home() {
             >
               <button
                 type="button"
-                className="text-black hover:text-amber-500 transition-colors"
+                className="text-sm font-medium tracking-normal normal-case text-black hover:text-amber-500 transition-colors"
                 onClick={() => {
                   window.location.hash = "industries";
                   setIsIndustriesMenuOpen((prev) => !prev);

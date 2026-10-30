@@ -1,10 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { usePageSeo } from "@/hooks/usePageSeo";
 import { AlertCircle, Home } from "lucide-react";
 import { useLocation } from "wouter";
 
 export default function NotFound() {
-  const [, setLocation] = useLocation();
+  const [location, setLocation] = useLocation();
+
+  usePageSeo({
+    title: "Page Not Found | Gvstudios",
+    description: "The page you requested was not found on Gvstudios.",
+    path: location || "/404",
+    noindex: true,
+  });
 
   const handleGoHome = () => {
     setLocation("/");

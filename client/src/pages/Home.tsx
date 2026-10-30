@@ -25,7 +25,15 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useScrollAnimation, useStaggerAnimation } from "@/hooks/useScrollAnimation";
-import { serviceCategories } from "@/data/services";
+import { serviceCategories, serviceTitleToSlug } from "@/data/services";
+import { usePageSeo } from "@/hooks/usePageSeo";
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_TITLE,
+  faqPageSchema,
+  organizationSchema,
+  websiteSchema,
+} from "@/lib/seo";
 import { Link } from "wouter";
 
 /**
@@ -87,6 +95,7 @@ export default function Home() {
 
   const featuredService = {
     title: "Artificial Intelligence",
+    slug: "artificial-intelligence",
     desc: "Machine Learning, NLP, Computer Vision and Generative AI engineered to automate, analyze and augment every layer of your business.",
     image: "https://www.octaloop.io/assets/service-ai-DrNXlC07.jpg",
     tags: ["GenAI", "MLOps", "Computer Vision", "NLP"],
@@ -110,6 +119,7 @@ export default function Home() {
   const spatialCards = [
     {
       eyebrow: "DIGITAL TWIN",
+      slug: "digital-twin",
       title: "Virtual replicas of physical assets",
       description:
         "Real-time simulation, predictive maintenance, and IoT-driven monitoring for factories, infrastructure, and cities.",
@@ -119,6 +129,7 @@ export default function Home() {
     },
     {
       eyebrow: "GIS & GEOSPATIAL",
+      slug: "gis-geospatial",
       title: "Location intelligence at scale",
       description:
         "Satellite imagery, terrain analysis, and spatial data engineering for smarter urban planning and resource decisions.",
@@ -128,6 +139,7 @@ export default function Home() {
     },
     {
       eyebrow: "EMBODIED AI & ROBOTICS",
+      slug: "embodied-ai",
       title: "Where AI meets the physical world",
       description:
         "Sensory perception, on-device AI, and autonomous navigation powering the next generation of robotics and automation.",
@@ -136,6 +148,13 @@ export default function Home() {
         "https://www.octaloop.io/assets/embodied-ai-hero-tUOufDHL.jpg",
     },
   ];
+
+  usePageSeo({
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    path: "/",
+    jsonLd: [organizationSchema(), websiteSchema(), faqPageSchema(faqs)],
+  });
 
   const industries = [
     { title: "Blockchain / NFTs / DeFi", projects: "40+ Projects", icon: "◈", image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663479913404/4ksf5uZVSYeBaJPwjChFSM/ai-data-flow-cEF8YMoyUN6uptPqjghePV.webp" },
@@ -277,9 +296,9 @@ export default function Home() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white border-b-2 border-orange-200 animate-slide-in-down">
         <div className="container flex items-center justify-between py-4 md:py-6">
-          <div className="flex items-center">
-            <img src={`${import.meta.env.BASE_URL}gv-logo.png`} alt="Gvstudios logo" className="h-12 w-auto md:h-14" />
-          </div>
+          <Link href="/" className="flex items-center" aria-label="Gvstudios home">
+            <img src={`${import.meta.env.BASE_URL}gv-logo.png`} alt="Gvstudios - AI and IT solutions company" className="h-12 w-auto md:h-14" />
+          </Link>
           <div className="hidden md:flex items-center gap-8 text-sm">
             <div
               className="relative"
@@ -396,6 +415,7 @@ export default function Home() {
             loop
             muted
             playsInline
+            aria-label="Gvstudios AI and software engineering background video"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/75 to-white/55" />
 
@@ -404,17 +424,17 @@ export default function Home() {
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-black animate-fade-in-up">
                 Empowering The Next
                 <br />
-                Era Of <span className="text-amber-500">AI Solutions</span>
+                Era Of <span className="text-amber-500">AI & IT Solutions</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl animate-fade-in-up">
-                Gvstudios is a global AI company delivering custom machine learning and end-to-end AI services that help businesses build, scale, and innovate.
+                Gvstudios is a global AI and IT solutions company delivering custom machine learning, software development, cybersecurity, and digital transformation services that help businesses build, scale, and innovate.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up">
                 <Button asChild className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-6 text-base btn-interactive">
                   <a href={contactMailto}>GET IN TOUCH</a>
                 </Button>
-                <Button className="border-2 border-amber-500 text-black hover:bg-amber-50 font-semibold px-8 py-6 text-base btn-interactive">
-                  EXPLORE SERVICES
+                <Button asChild variant="outline" className="border-2 border-amber-500 text-black hover:bg-amber-50 font-semibold px-8 py-6 text-base btn-interactive">
+                  <a href="#services">EXPLORE SERVICES</a>
                 </Button>
               </div>
             </div>
@@ -494,35 +514,59 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
-                  <a href="#" className="text-white font-semibold flex items-center gap-2 hover:gap-3 transition-all">
-                    Explore Service <ArrowRight className="w-4 h-4" />
-                  </a>
+                  <Link href={`/services/${featuredService.slug}`} className="text-white font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                    Explore Artificial Intelligence Services <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
               </div>
 
               <div className="grid md:grid-cols-3 gap-4">
-                {services.map((service, idx) => (
-                  <div
-                    key={service.title}
-                    className="rounded-2xl overflow-hidden min-h-[170px] animate-fade-in-up"
-                    style={{
-                      animationDelay: `${idx * 0.05}s`,
-                      backgroundImage: `${serviceOverlays[idx % serviceOverlays.length]}, url('${service.image}')`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  >
+                {services.map((service, idx) => {
+                  const slug = serviceTitleToSlug[service.title];
+                  const card = (
                     <div className="bg-gradient-to-r from-black/85 to-black/45 h-full p-5 flex flex-col justify-end">
                       <div className="mb-3">
                         <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-white/20 text-white text-xs font-bold">
                           {service.icon}
                         </span>
                       </div>
-                      <h4 className="text-white font-bold mb-1">{service.title}</h4>
+                      <h3 className="text-white font-bold mb-1 text-base">{service.title}</h3>
                       <p className="text-white/80 text-sm">{service.desc}</p>
                     </div>
-                  </div>
-                ))}
+                  );
+
+                  return slug ? (
+                    <Link
+                      key={service.title}
+                      href={`/services/${slug}`}
+                      className="rounded-2xl overflow-hidden min-h-[170px] animate-fade-in-up block"
+                      style={{
+                        animationDelay: `${idx * 0.05}s`,
+                        backgroundImage: `${serviceOverlays[idx % serviceOverlays.length]}, url('${service.image}')`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                      aria-label={`${service.title} services`}
+                    >
+                      {card}
+                    </Link>
+                  ) : (
+                    <a
+                      key={service.title}
+                      href="#services"
+                      className="rounded-2xl overflow-hidden min-h-[170px] animate-fade-in-up block"
+                      style={{
+                        animationDelay: `${idx * 0.05}s`,
+                        backgroundImage: `${serviceOverlays[idx % serviceOverlays.length]}, url('${service.image}')`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                      aria-label={`${service.title} overview`}
+                    >
+                      {card}
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -563,9 +607,9 @@ export default function Home() {
                         </li>
                       ))}
                     </ul>
-                    <a href="#" className="text-amber-500 font-semibold text-sm flex items-center gap-1">
-                      Explore <ArrowRight className="w-4 h-4" />
-                    </a>
+                    <Link href={`/services/${card.slug}`} className="text-amber-500 font-semibold text-sm flex items-center gap-1">
+                      Explore {card.eyebrow.toLowerCase()} <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </div>
                 </article>
               ))}
@@ -630,8 +674,10 @@ export default function Home() {
             </div>
 
             <div className="text-center mt-10">
-              <Button className="bg-black hover:bg-gray-900 text-white font-semibold px-8 py-5 text-sm rounded-full btn-interactive uppercase tracking-[0.06em]">
-                View All Industries <ArrowRight className="ml-2 w-4 h-4" />
+              <Button asChild className="bg-black hover:bg-gray-900 text-white font-semibold px-8 py-5 text-sm rounded-full btn-interactive uppercase tracking-[0.06em]">
+                <a href="#industries">
+                  View All Industries <ArrowRight className="ml-2 w-4 h-4" />
+                </a>
               </Button>
             </div>
           </div>
@@ -887,11 +933,13 @@ export default function Home() {
                       }`}
                     />
                   </button>
-                  {expandedFaq === idx && (
-                    <div className="px-6 pb-6 border-t-2 border-dashed border-amber-300 bg-amber-50">
-                      <p className="text-gray-700">{faq.answer}</p>
-                    </div>
-                  )}
+                  <div
+                    className={`px-6 pb-6 border-t-2 border-dashed border-amber-300 bg-amber-50 ${
+                      expandedFaq === idx ? "block" : "hidden"
+                    }`}
+                  >
+                    <p className="text-gray-700">{faq.answer}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -952,19 +1000,19 @@ export default function Home() {
             <div className="animate-fade-in-up">
               <h4 className="font-bold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-white/70">
-                <li><a href="#" className="hover:text-amber-500 transition-colors">Machine Learning</a></li>
-                <li><a href="#" className="hover:text-amber-500 transition-colors">Deep Learning</a></li>
-                <li><a href="#" className="hover:text-amber-500 transition-colors">AI Automation</a></li>
-                <li><a href="#" className="hover:text-amber-500 transition-colors">Data Engineering</a></li>
+                <li><Link href="/services/artificial-intelligence" className="hover:text-amber-500 transition-colors">Artificial Intelligence</Link></li>
+                <li><Link href="/services/software-development" className="hover:text-amber-500 transition-colors">Software Development</Link></li>
+                <li><Link href="/services/cybersecurity" className="hover:text-amber-500 transition-colors">Cybersecurity</Link></li>
+                <li><Link href="/services/it-consultancy" className="hover:text-amber-500 transition-colors">IT Consultancy</Link></li>
               </ul>
             </div>
             <div className="animate-fade-in-up">
               <h4 className="font-bold mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-white/70">
-                <li><a href="#" className="hover:text-amber-500 transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-amber-500 transition-colors">Case Studies</a></li>
-                <li><a href="#" className="hover:text-amber-500 transition-colors">Blog</a></li>
-                <li><a href="#" className="hover:text-amber-500 transition-colors">Careers</a></li>
+                <li><a href="#about" className="hover:text-amber-500 transition-colors">About Us</a></li>
+                <li><a href="#portfolio" className="hover:text-amber-500 transition-colors">Case Studies</a></li>
+                <li><a href="#services" className="hover:text-amber-500 transition-colors">Services</a></li>
+                <li><a href={contactMailto} className="hover:text-amber-500 transition-colors">Contact</a></li>
               </ul>
             </div>
             <div className="animate-fade-in-up">
@@ -978,7 +1026,7 @@ export default function Home() {
           </div>
 
           <div className="border-t-2 border-white/10 pt-8 text-center text-white/70 text-sm">
-            <p>&copy; 2026 Gvstudios. All rights reserved. | <a href="#" className="hover:text-amber-500">Terms of Service</a> | <a href="#" className="hover:text-amber-500">Privacy Policy</a></p>
+            <p>&copy; 2026 Gvstudios. All rights reserved. | Enterprise AI & IT solutions at <a href="https://gvstudio.live" className="hover:text-amber-500">gvstudio.live</a></p>
           </div>
         </div>
       </footer>

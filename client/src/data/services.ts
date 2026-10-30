@@ -26,9 +26,9 @@ export const serviceCategories: ServiceCategory[] = [
         shortDescription: "End-to-end AI systems for automation and growth.",
         heroDescription:
           "Build practical AI solutions from strategy to deployment, including GenAI, model operations, and intelligent workflows.",
-        seoTitle: "Artificial Intelligence Services | Gvstudios",
+        seoTitle: "Artificial Intelligence Services | GV Studio",
         seoDescription:
-          "Custom AI development, GenAI copilots, MLOps, computer vision, and NLP. Production-ready machine learning from Gvstudios.",
+          "Custom AI development, GenAI copilots, MLOps, computer vision, and NLP. Production-ready machine learning from GV Studio.",
         keyPoints: ["GenAI & copilots", "ML model deployment", "AI governance"],
         outcomes: [
           "Automate repetitive workflows with measurable ROI",
@@ -53,9 +53,9 @@ export const serviceCategories: ServiceCategory[] = [
         shortDescription: "AI that interacts with physical environments.",
         heroDescription:
           "Design robotic and sensor-driven systems with perception, planning, and control loops for real-world automation.",
-        seoTitle: "Embodied AI & Robotics Solutions | Gvstudios",
+        seoTitle: "Embodied AI & Robotics Solutions | GV Studio",
         seoDescription:
-          "Embodied AI for robotics and automation: perception, on-device inference, and autonomous control systems by Gvstudios.",
+          "Embodied AI for robotics and automation: perception, on-device inference, and autonomous control systems by GV Studio.",
         keyPoints: ["Robot perception", "On-device inference", "Autonomous control"],
         outcomes: [
           "Connect sensors, models, and actuators into reliable loops",
@@ -80,9 +80,9 @@ export const serviceCategories: ServiceCategory[] = [
         shortDescription: "Virtual replicas for simulation and monitoring.",
         heroDescription:
           "Create digital twins for factories, cities, and assets to improve decisions with predictive simulation.",
-        seoTitle: "Digital Twin Development Services | Gvstudios",
+        seoTitle: "Digital Twin Development Services | GV Studio",
         seoDescription:
-          "Digital twin platforms for factories, infrastructure, and cities—3D models, IoT data, and predictive simulation by Gvstudios.",
+          "Digital twin platforms for factories, infrastructure, and cities—3D models, IoT data, and predictive simulation by GV Studio.",
         keyPoints: ["3D asset models", "Predictive maintenance", "Operational dashboards"],
         outcomes: [
           "Simulate operations before costly physical changes",
@@ -107,7 +107,7 @@ export const serviceCategories: ServiceCategory[] = [
         shortDescription: "Location intelligence and spatial analytics.",
         heroDescription:
           "Use satellite and map-based intelligence to optimize planning, logistics, and infrastructure operations.",
-        seoTitle: "GIS & Geospatial Analytics Services | Gvstudios",
+        seoTitle: "GIS & Geospatial Analytics Services | GV Studio",
         seoDescription:
           "GIS and geospatial analytics: satellite imagery, spatial dashboards, and location intelligence for planning and logistics.",
         keyPoints: ["Spatial analytics", "Remote sensing", "Geospatial dashboards"],
@@ -134,9 +134,9 @@ export const serviceCategories: ServiceCategory[] = [
         shortDescription: "Advanced problem solving for future systems.",
         heroDescription:
           "Explore hybrid quantum-classical solutions for optimization, simulation, and research-heavy workloads.",
-        seoTitle: "Quantum Computing Consulting | Gvstudios",
+        seoTitle: "Quantum Computing Consulting | GV Studio",
         seoDescription:
-          "Quantum-ready architecture, algorithm prototyping, and hybrid quantum-classical pipelines with Gvstudios experts.",
+          "Quantum-ready architecture, algorithm prototyping, and hybrid quantum-classical pipelines with GV Studio experts.",
         keyPoints: ["Quantum-ready architecture", "Algorithm prototyping", "Hybrid pipelines"],
         outcomes: [
           "Identify workloads that benefit from quantum approaches",
@@ -166,9 +166,9 @@ export const serviceCategories: ServiceCategory[] = [
         shortDescription: "Protection across cloud, app, and data layers.",
         heroDescription:
           "Strengthen your security posture with proactive testing, hardening, monitoring, and compliance engineering.",
-        seoTitle: "Cybersecurity Services & Hardening | Gvstudios",
+        seoTitle: "Cybersecurity Services & Hardening | GV Studio",
         seoDescription:
-          "Enterprise cybersecurity: threat detection, zero-trust architecture, audits, and cloud security hardening by Gvstudios.",
+          "Enterprise cybersecurity: threat detection, zero-trust architecture, audits, and cloud security hardening by GV Studio.",
         keyPoints: ["Threat detection", "Zero-trust architecture", "Security audits"],
         outcomes: [
           "Reduce attack surface across apps and cloud",
@@ -193,9 +193,9 @@ export const serviceCategories: ServiceCategory[] = [
         shortDescription: "Secure decentralized systems and smart contracts.",
         heroDescription:
           "Build trusted blockchain products from token logic to secure smart contract implementation.",
-        seoTitle: "Blockchain & Smart Contract Development | Gvstudios",
+        seoTitle: "Blockchain & Smart Contract Development | GV Studio",
         seoDescription:
-          "Blockchain development for dApps, wallets, and secure smart contracts. Architecture and delivery by Gvstudios.",
+          "Blockchain development for dApps, wallets, and secure smart contracts. Architecture and delivery by GV Studio.",
         keyPoints: ["Smart contracts", "Wallet integrations", "Chain architecture"],
         outcomes: [
           "Launch secure on-chain products with audited patterns",
@@ -220,7 +220,7 @@ export const serviceCategories: ServiceCategory[] = [
         shortDescription: "Reliable software through automation and testing.",
         heroDescription:
           "Deliver stable releases with robust QA strategy, automated testing, and performance validation.",
-        seoTitle: "QA & Test Automation Services | Gvstudios",
+        seoTitle: "QA & Test Automation Services | GV Studio",
         seoDescription:
           "Software QA, test automation, and performance testing so your releases stay stable under real-world load.",
         keyPoints: ["Test automation", "Performance testing", "Release validation"],
@@ -252,9 +252,9 @@ export const serviceCategories: ServiceCategory[] = [
         shortDescription: "Custom web and enterprise applications.",
         heroDescription:
           "Engineer scalable products with modern web architecture, API layers, and cloud-native delivery.",
-        seoTitle: "Custom Software Development Company | Gvstudios",
+        seoTitle: "Custom Software Development Company | GV Studio",
         seoDescription:
-          "Custom web platforms, APIs, and cloud-native software development for startups and enterprises. Built by Gvstudios.",
+          "Custom web platforms, APIs, and cloud-native software development for startups and enterprises. Built by GV Studio.",
         keyPoints: ["Web platforms", "API engineering", "Cloud deployment"],
         outcomes: [
           "Ship scalable products with clean architecture",
@@ -279,9 +279,9 @@ export const serviceCategories: ServiceCategory[] = [
         shortDescription: "dApps, wallets, and decentralized infrastructure.",
         heroDescription:
           "Launch Web3 products with secure contracts, wallet UX, and production-ready decentralized architecture.",
-        seoTitle: "Web3 & dApp Development Services | Gvstudios",
+        seoTitle: "Web3 & dApp Development Services | GV Studio",
         seoDescription:
-          "Web3 development for dApps, smart contracts, and wallet UX. Secure decentralized products from Gvstudios.",
+          "Web3 development for dApps, smart contracts, and wallet UX. Secure decentralized products from GV Studio.",
         keyPoints: ["dApp development", "Smart contracts", "Wallet UX"],
         outcomes: [
           "Deliver Web3 products users can actually use",
@@ -306,9 +306,9 @@ export const serviceCategories: ServiceCategory[] = [
         shortDescription: "Cross-platform mobile apps and interactive products.",
         heroDescription:
           "Deliver performant mobile and game experiences across iOS, Android, and modern engines.",
-        seoTitle: "Mobile App & Game Development | Gvstudios",
+        seoTitle: "Mobile App & Game Development | GV Studio",
         seoDescription:
-          "Cross-platform mobile apps and game development for iOS, Android, and modern engines. Built by Gvstudios.",
+          "Cross-platform mobile apps and game development for iOS, Android, and modern engines. Built by GV Studio.",
         keyPoints: ["Cross-platform apps", "Game loops & UX", "Store deployment"],
         outcomes: [
           "Launch polished apps across iOS and Android",
@@ -338,9 +338,9 @@ export const serviceCategories: ServiceCategory[] = [
         shortDescription: "Architecture and technology roadmap guidance.",
         heroDescription:
           "Plan and execute transformation with expert advisory on systems architecture, operations, and scale.",
-        seoTitle: "IT Consultancy & Technology Strategy | Gvstudios",
+        seoTitle: "IT Consultancy & Technology Strategy | GV Studio",
         seoDescription:
-          "IT consultancy for architecture, technology roadmaps, and digital transformation delivery with Gvstudios advisors.",
+          "IT consultancy for architecture, technology roadmaps, and digital transformation delivery with GV Studio advisors.",
         keyPoints: ["Solution architecture", "Technology strategy", "Delivery governance"],
         outcomes: [
           "Clarify the right architecture for growth",
@@ -365,9 +365,9 @@ export const serviceCategories: ServiceCategory[] = [
         shortDescription: "Dedicated talent for fast-moving teams.",
         heroDescription:
           "Extend your teams with vetted engineers, designers, and specialists aligned to your roadmap.",
-        seoTitle: "IT Staffing & Dedicated Engineering Teams | Gvstudios",
+        seoTitle: "IT Staffing & Dedicated Engineering Teams | GV Studio",
         seoDescription:
-          "Hire dedicated engineers, designers, and specialists. Flexible IT staffing and team extension from Gvstudios.",
+          "Hire dedicated engineers, designers, and specialists. Flexible IT staffing and team extension from GV Studio.",
         keyPoints: ["Dedicated teams", "Role-based hiring", "Flexible engagement"],
         outcomes: [
           "Scale delivery capacity without long hiring cycles",
@@ -392,7 +392,7 @@ export const serviceCategories: ServiceCategory[] = [
         shortDescription: "Growth systems backed by data and automation.",
         heroDescription:
           "Scale customer acquisition and retention with integrated CRM, campaigns, and analytics.",
-        seoTitle: "Sales & Marketing Technology Services | Gvstudios",
+        seoTitle: "Sales & Marketing Technology Services | GV Studio",
         seoDescription:
           "Growth systems with CRM integrations, campaign automation, and analytics to scale acquisition and retention.",
         keyPoints: ["Growth funnels", "CRM integrations", "Campaign analytics"],

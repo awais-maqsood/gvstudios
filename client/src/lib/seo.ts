@@ -1,13 +1,13 @@
 export const SITE_URL = "https://gvstudio.live";
-export const SITE_NAME = "Gvstudios";
+export const SITE_NAME = "GV Studio";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/gv-logo.png`;
 export const CONTACT_EMAIL = "awaismaqsood91@gmail.com";
 export const CONTACT_PHONE = "+923085029353";
 
 export const DEFAULT_TITLE =
-  "Gvstudios | AI, Software & IT Solutions Company";
+  "GV Studio | AI, Software & IT Solutions Company";
 export const DEFAULT_DESCRIPTION =
-  "Gvstudios builds custom AI, machine learning, cybersecurity, and enterprise software. Strategy, development, and MLOps for startups and global teams.";
+  "GV Studio builds custom AI, machine learning, cybersecurity, and enterprise software. Strategy, development, and MLOps for startups and global teams at gvstudio.live.";
 
 export type PageSeoInput = {
   title: string;
@@ -100,12 +100,17 @@ export function organizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: SITE_NAME,
+    alternateName: ["Gvstudios", "GV Studios"],
     url: SITE_URL,
     logo: DEFAULT_OG_IMAGE,
     email: CONTACT_EMAIL,
     telephone: CONTACT_PHONE,
     description: DEFAULT_DESCRIPTION,
     areaServed: "Worldwide",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "PK",
+    },
     sameAs: [],
     contactPoint: [
       {
@@ -113,6 +118,7 @@ export function organizationSchema() {
         contactType: "sales",
         email: CONTACT_EMAIL,
         telephone: CONTACT_PHONE,
+        areaServed: "Worldwide",
         availableLanguage: ["English"],
       },
     ],

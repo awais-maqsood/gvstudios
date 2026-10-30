@@ -1,6 +1,6 @@
 {
-  "framework": "vite",
-  "buildCommand": "pnpm exec vite build",
+  "framework": null,
+  "buildCommand": "pnpm run build:web",
   "outputDirectory": "dist/public",
   "headers": [
     {
@@ -14,7 +14,11 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!robots\\.txt$|sitemap\\.xml$).*)",
+      "source": "/services/:slug",
+      "destination": "/services/:slug/index.html"
+    },
+    {
+      "source": "/((?!robots\\.txt$|sitemap\\.xml$|services/).*)",
       "destination": "/index.html"
     }
   ]

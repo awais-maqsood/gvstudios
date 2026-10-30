@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useScrollAnimation, useStaggerAnimation } from "@/hooks/useScrollAnimation";
+import ContactForm from "@/components/ContactForm";
 import { serviceCategories, serviceTitleToSlug } from "@/data/services";
 import { usePageSeo } from "@/hooks/usePageSeo";
 import {
@@ -388,7 +389,7 @@ export default function Home() {
                   <div className="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
                     <p className="text-gray-500 text-sm">Need help choosing?</p>
                     <Button asChild className="bg-amber-500 hover:bg-amber-600 text-black font-semibold rounded-full px-6">
-                      <a href={contactMailto}>
+                      <a href="#contact">
                         Contact Us <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
@@ -398,9 +399,10 @@ export default function Home() {
             </div>
             <a href="#portfolio" className="text-black hover:text-amber-500 transition-colors">Case Studies</a>
             <a href="#about" className="text-black hover:text-amber-500 transition-colors">About Us</a>
+            <a href="#contact" className="text-black hover:text-amber-500 transition-colors">Contact</a>
           </div>
           <Button asChild className="bg-amber-500 hover:bg-amber-600 text-black font-semibold btn-interactive">
-            <a href={contactMailto}>GET IN TOUCH</a>
+            <a href="#contact">GET IN TOUCH</a>
           </Button>
         </div>
       </nav>
@@ -431,7 +433,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up">
                 <Button asChild className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-6 text-base btn-interactive">
-                  <a href={contactMailto}>GET IN TOUCH</a>
+                  <a href="#contact">GET IN TOUCH</a>
                 </Button>
                 <Button asChild variant="outline" className="border-2 border-amber-500 text-black hover:bg-amber-50 font-semibold px-8 py-6 text-base btn-interactive">
                   <a href="#services">EXPLORE SERVICES</a>
@@ -736,7 +738,7 @@ export default function Home() {
                 </div>
               </div>
               <Button asChild className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-6 rounded-xl">
-                <a href={contactMailto}>
+                <a href="#contact">
                   Discuss Your Platform <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
               </Button>
@@ -812,7 +814,7 @@ export default function Home() {
                   </p>
                 </div>
                 <Button asChild className="bg-white hover:bg-gray-100 text-black font-semibold px-8 py-6 rounded-full self-start md:self-auto">
-                  <a href={contactMailto}>
+                  <a href="#contact">
                     Get Started <ArrowRight className="ml-2 w-4 h-4" />
                   </a>
                 </Button>
@@ -946,25 +948,19 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Newsletter Section */}
-        <section className="py-16 md:py-24 bg-black">
-          <div className="container max-w-2xl mx-auto text-center animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Discuss Your <span className="text-amber-500">Platform</span>
-            </h2>
-            <p className="text-white/80 mb-8">
-              Ready to transform your business with AI? Let's discuss how Gvstudios can help.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 rounded-lg bg-white/10 text-white placeholder:text-white/50 border-2 border-amber-500 focus:outline-none focus:border-amber-400 transition-colors duration-300"
-              />
-              <Button asChild className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 btn-interactive">
-                <a href={contactMailto}>Subscribe Now</a>
-              </Button>
+        {/* Contact Section */}
+        <section id="contact" className="py-16 md:py-24 bg-black">
+          <div className="container max-w-3xl mx-auto animate-fade-in-up">
+            <div className="text-center mb-10">
+              <p className="text-xs font-semibold tracking-[0.2em] text-amber-500 mb-3">CONTACT US</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Let&apos;s Build Your <span className="text-amber-500">Next Project</span>
+              </h2>
+              <p className="text-white/80 max-w-2xl mx-auto">
+                Tell us what you need. Your message is sent directly to {contactEmail}.
+              </p>
             </div>
+            <ContactForm />
           </div>
         </section>
 
@@ -975,10 +971,10 @@ export default function Home() {
               Ready to Accelerate Your Digital Transformation?
             </h2>
             <p className="text-lg text-black/90 mb-8 max-w-2xl mx-auto">
-              Partner with Gvstudios to build next-gen AI solutions powered by machine learning, deep learning, and autonomous systems.
+              Partner with GV Studio to build next-gen AI solutions powered by machine learning, deep learning, and autonomous systems.
             </p>
             <Button asChild className="bg-black hover:bg-gray-900 text-amber-500 font-semibold px-8 py-6 text-base btn-interactive">
-              <a href={contactMailto}>
+              <a href="#contact">
                 Get Started <ArrowRight className="ml-2 w-4 h-4" />
               </a>
             </Button>
@@ -1012,7 +1008,7 @@ export default function Home() {
                 <li><a href="#about" className="hover:text-amber-500 transition-colors">About Us</a></li>
                 <li><a href="#portfolio" className="hover:text-amber-500 transition-colors">Case Studies</a></li>
                 <li><a href="#services" className="hover:text-amber-500 transition-colors">Services</a></li>
-                <li><a href={contactMailto} className="hover:text-amber-500 transition-colors">Contact</a></li>
+                <li><a href="#contact" className="hover:text-amber-500 transition-colors">Contact</a></li>
               </ul>
             </div>
             <div className="animate-fade-in-up">

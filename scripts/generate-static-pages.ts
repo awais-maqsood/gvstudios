@@ -156,10 +156,10 @@ function serviceBody(service: (typeof allServices)[number]) {
     <a href="/">Home</a> / <a href="/#services">Services</a> / ${escapeHtml(service.title)}
   </nav>
   <p>GV Studio service · Contact <a href="tel:${CONTACT_PHONE}">${CONTACT_PHONE}</a> · <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a></p>
-  <h1>${escapeHtml(service.title)}</h1>
+  <h1>${escapeHtml(service.title)} Services</h1>
   <p>${escapeHtml(service.heroDescription)}</p>
   <p>${escapeHtml(service.shortDescription)}</p>
-  <h2>What we deliver</h2>
+  <h2>What we build</h2>
   <ul>
     ${service.keyPoints
       .map(
@@ -168,10 +168,28 @@ function serviceBody(service: (typeof allServices)[number]) {
       )
       .join("")}
   </ul>
+  <h2>Who it's for</h2>
+  <ul>${service.audience.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
   <h2>Common use cases</h2>
   <ul>${service.useCases.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+  <h2>Example project: ${escapeHtml(service.exampleProject.title)}</h2>
+  <h3>Problem</h3>
+  <p>${escapeHtml(service.exampleProject.problem)}</p>
+  <h3>Approach</h3>
+  <p>${escapeHtml(service.exampleProject.approach)}</p>
+  <h3>Result</h3>
+  <p>${escapeHtml(service.exampleProject.result)}</p>
+  <h2>Technology stack</h2>
+  <ul>${service.techStack.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
   <h2>How we work</h2>
   <ol>${service.process.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}</ol>
+  <h2>Frequently asked questions</h2>
+  ${service.faqs
+    .map(
+      (faq) =>
+        `<h3>${escapeHtml(faq.question)}</h3><p>${escapeHtml(faq.answer)}</p>`,
+    )
+    .join("")}
   <p><a href="mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(service.title + " Inquiry - GV Studio")}">Discuss ${escapeHtml(service.title)}</a></p>
   <h2>Related services</h2>
   <ul>
@@ -184,6 +202,7 @@ function serviceBody(service: (typeof allServices)[number]) {
       )
       .join("")}
   </ul>
+  <p>Last updated: Nov 2026</p>
 </main>`.trim();
 }
 
@@ -240,6 +259,17 @@ function buildPages(): PageSpec[] {
               item: `${SITE_URL}${pathName}`,
             },
           ],
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: service.faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
         },
       ],
     } satisfies PageSpec;

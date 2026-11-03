@@ -405,9 +405,24 @@ export default function Home() {
             </a>
             <a href="#contact" className="text-black hover:text-amber-500 transition-colors">Contact</a>
           </div>
-          <Button asChild className="bg-amber-500 hover:bg-amber-600 text-black font-semibold btn-interactive">
-            <a href="#contact">GET IN TOUCH</a>
-          </Button>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Button
+              asChild
+              variant="outline"
+              className="border-2 border-amber-500 text-black hover:bg-amber-50 font-semibold btn-interactive"
+            >
+              <a
+                href="https://bots.gvstudio.live/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                BOTS
+              </a>
+            </Button>
+            <Button asChild className="bg-amber-500 hover:bg-amber-600 text-black font-semibold btn-interactive">
+              <a href="#contact">GET IN TOUCH</a>
+            </Button>
+          </div>
         </div>
       </nav>
 

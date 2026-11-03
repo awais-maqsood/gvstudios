@@ -43,7 +43,7 @@
 }
 
 :root {
-  /* Gvstudios Brand - Orange/Amber & Black */
+  /* GV Studio Brand - Orange/Amber & Black */
   --primary: #FFA500;
   --primary-foreground: #000000;
   --sidebar-primary: #FFA500;
@@ -253,7 +253,7 @@
     }
   }
 
-  /* Gvstudios Brand Components - Orange & Black */
+  /* GV Studio Brand Components - Orange & Black */
   .service-card {
     @apply relative p-6 md:p-8 bg-card text-card-foreground border border-border rounded-lg transition-all duration-300 hover:shadow-lg hover:border-accent;
   }

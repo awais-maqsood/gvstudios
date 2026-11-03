@@ -436,4 +436,7 @@ export const serviceTitleToSlug: Record<string, string> = {
   "Digital Twin": "digital-twin",
   "GIS & Geospatial": "gis-geospatial",
   "Embodied AI & Robotics": "embodied-ai",
+  "Software Development": "software-development",
+  Blockchain: "blockchain",
+  "IT Staffing": "it-staffing",
 };

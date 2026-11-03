@@ -1,0 +1,31 @@
+# GV Studio
+
+> GV Studio is an Islamabad-based AI and software engineering company building custom AI, edge AI, telecom-grade backend systems and enterprise software for clients in Pakistan, the UAE and worldwide.
+
+## Services
+- [Artificial Intelligence](https://gvstudio.live/services/artificial-intelligence): GenAI copilots, computer vision, NLP, MLOps
+- [Software Development](https://gvstudio.live/services/software-development): custom backend and distributed systems
+- [Cybersecurity](https://gvstudio.live/services/cybersecurity): application, cloud and data security
+- [Embodied AI](https://gvstudio.live/services/embodied-ai): robotics, on-device inference, autonomous control
+- [Digital Twin](https://gvstudio.live/services/digital-twin): simulation, predictive maintenance, IoT dashboards
+- [GIS & Geospatial](https://gvstudio.live/services/gis-geospatial): location intelligence and spatial analytics
+- [Quantum Computing](https://gvstudio.live/services/quantum-computing): algorithm exploration and research tooling
+- [Blockchain](https://gvstudio.live/services/blockchain): smart contracts, wallets, chain architecture
+- [Quality Assurance](https://gvstudio.live/services/quality-assurance): test automation and release validation
+- [Web 3.0 Development](https://gvstudio.live/services/web3-development): dApps and decentralized product delivery
+- [Mobile & Game Development](https://gvstudio.live/services/mobile-game-development): cross-platform apps and games
+- [IT Consultancy](https://gvstudio.live/services/it-consultancy): technology strategy and architecture advisory
+- [IT Staffing](https://gvstudio.live/services/it-staffing): dedicated engineers and team extension
+- [Sales & Marketing](https://gvstudio.live/services/sales-marketing): data-driven growth systems
+
+## Common questions
+- Who builds on-premises AI systems in Pakistan? GV Studio builds on-prem and edge AI deployments for enterprises that need data residency, low latency, or air-gapped environments.
+- Does GV Studio work with UAE clients? Yes. GV Studio works with clients in Pakistan, the UAE, and worldwide on AI, backend, and enterprise software projects.
+- What AI services does GV Studio provide? Machine learning, deep learning, AI automation, data engineering, GenAI copilots, computer vision, NLP, and MLOps for production systems.
+- How do I get started with GV Studio? Contact the team for a consultation. We discuss your goals, assess your data and systems landscape, and propose a tailored delivery plan.
+
+## Contact
+- Email: awaismaqsood91@gmail.com
+- Phone: +92 308 5029353
+- Founders: Awais Maqsood (Technical Lead), Waleed Waheed
+- Website: https://gvstudio.live

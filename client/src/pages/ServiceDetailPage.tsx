@@ -35,8 +35,8 @@ export default function ServiceDetailPage() {
           ],
         }
       : {
-          title: "Service Not Found | Gvstudios",
-          description: "The requested Gvstudios service page could not be found.",
+          title: "Service Not Found | GV Studio",
+          description: "The requested GV Studio service page could not be found.",
           path: `/services/${slug}`,
           noindex: true,
         },
@@ -50,7 +50,7 @@ export default function ServiceDetailPage() {
     .filter((item) => item.slug !== service.slug)
     .slice(0, 4);
   const contactMailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-    `${service.title} Inquiry - Gvstudios`,
+    `${service.title} Inquiry - GV Studio`,
   )}`;
 
   return (
@@ -59,14 +59,26 @@ export default function ServiceDetailPage() {
         <div className="container flex items-center justify-between py-4 md:py-6">
           <Link href="/" className="flex items-center">
             <img
-              src={`${import.meta.env.BASE_URL}gv-logo.png`}
-              alt="Gvstudios - AI and IT solutions company"
+              src="/gv-logo.png"
+              alt="GV Studio - AI and IT solutions company"
+              width="160"
+              height="56"
               className="h-12 w-auto md:h-14"
             />
           </Link>
-          <Button asChild className="bg-amber-500 hover:bg-amber-600 text-black font-semibold">
-            <a href={contactMailto}>Get a Quote</a>
-          </Button>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://bots.gvstudio.live/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline text-sm font-medium text-black hover:text-amber-500 transition-colors"
+            >
+              Bots
+            </a>
+            <Button asChild className="bg-amber-500 hover:bg-amber-600 text-black font-semibold">
+              <a href={contactMailto}>Get a Quote</a>
+            </Button>
+          </div>
         </div>
       </nav>
 
@@ -91,7 +103,7 @@ export default function ServiceDetailPage() {
               </ol>
             </nav>
             <p className="text-sm font-semibold tracking-[0.18em] text-amber-500 mb-4">
-              GVSTUDIOS SERVICE
+              GV STUDIO SERVICE
             </p>
             <h1 className="text-5xl md:text-6xl font-bold text-black mb-6">
               {service.title}
@@ -100,7 +112,7 @@ export default function ServiceDetailPage() {
               {service.heroDescription}
             </p>
             <p className="mt-4 text-base text-gray-600 max-w-3xl">
-              {service.shortDescription} Partner with Gvstudios to design, build,
+              {service.shortDescription} Partner with GV Studio to design, build,
               and scale production-ready solutions for your team.
             </p>
           </div>
@@ -188,7 +200,7 @@ export default function ServiceDetailPage() {
             </div>
             <p className="mt-8 text-white/70">
               <Link href="/" className="text-amber-500 hover:underline">
-                Back to Gvstudios home
+                Back to GV Studio home
               </Link>{" "}
               or browse all offerings in{" "}
               <a href="/#services" className="text-amber-500 hover:underline">

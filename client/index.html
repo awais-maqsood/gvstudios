@@ -50,8 +50,10 @@
             "areaServed": "Worldwide",
             "address": {
               "@type": "PostalAddress",
+              "addressLocality": "Islamabad",
               "addressCountry": "PK"
-            }
+            },
+            "sameAs": []
           },
           {
             "@type": "WebSite",
@@ -61,6 +63,63 @@
               "@type": "Organization",
               "name": "GV Studio"
             }
+          },
+          {
+            "@type": "Person",
+            "name": "Awais Maqsood",
+            "jobTitle": "Co-founder & Technical Lead",
+            "worksFor": { "@type": "Organization", "name": "GV Studio" }
+          },
+          {
+            "@type": "Person",
+            "name": "Waleed Waheed",
+            "jobTitle": "Co-founder",
+            "worksFor": { "@type": "Organization", "name": "GV Studio" }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What AI services does GV Studio provide?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We specialize in machine learning, deep learning, AI automation, data engineering, and AI governance. Our solutions span predictive analytics, computer vision, NLP, and autonomous systems."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I get started with GV Studio?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Contact our team for a free consultation. We'll discuss your business goals, assess your data landscape, and propose a tailored AI strategy."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can AI solutions benefit my business?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "AI can automate processes, improve decision-making, enhance customer experiences, and unlock insights from your data. Our solutions typically deliver measurable efficiency gains."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What makes GV Studio different?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We combine deep technical expertise with industry knowledge, delivering production-ready AI and telecom-grade backend systems with ongoing support."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which industries do you serve?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We work across industries including telecom, healthcare, finance, manufacturing, retail, energy, government, and more."
+                }
+              }
+            ]
           }
         ]
       }
@@ -68,16 +127,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script
-      defer
-      src="%VITE_ANALYTICS_ENDPOINT%/umami"
-      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
   </body>
 
 </html>

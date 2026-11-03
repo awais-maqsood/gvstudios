@@ -48,6 +48,7 @@ function organizationGraph() {
     areaServed: "Worldwide",
     address: {
       "@type": "PostalAddress",
+      addressLocality: "Islamabad",
       addressCountry: "PK",
     },
     contactPoint: {

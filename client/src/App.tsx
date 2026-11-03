@@ -26,7 +26,9 @@ function AppRoutes() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
-  const routerBase = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
+  // Vite BASE_URL is "/" at the site root. Stripping the trailing slash leaves "".
+  // Do NOT fall back to "/" — wouter would join "/" + "/services/..." into "//services/...".
+  const routerBase = import.meta.env.BASE_URL.replace(/\/$/, "");
 
   return (
     <ErrorBoundary>

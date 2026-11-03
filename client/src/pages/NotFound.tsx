@@ -8,8 +8,8 @@ export default function NotFound() {
   const [location, setLocation] = useLocation();
 
   usePageSeo({
-    title: "Page Not Found | Gvstudios",
-    description: "The page you requested was not found on Gvstudios.",
+    title: "Page Not Found | GV Studio",
+    description: "The page you requested was not found on GV Studio.",
     path: location || "/404",
     noindex: true,
   });

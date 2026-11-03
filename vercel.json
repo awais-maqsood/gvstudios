@@ -8,6 +8,10 @@
       "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
     },
     {
+      "source": "/llms.txt",
+      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
+    },
+    {
       "source": "/sitemap.xml",
       "headers": [{ "key": "Content-Type", "value": "application/xml; charset=utf-8" }]
     }
@@ -18,7 +22,7 @@
       "destination": "/services/:slug/index.html"
     },
     {
-      "source": "/((?!robots\\.txt$|sitemap\\.xml$|services/).*)",
+      "source": "/((?!robots\\.txt$|sitemap\\.xml$|llms\\.txt$|services/).*)",
       "destination": "/index.html"
     }
   ]

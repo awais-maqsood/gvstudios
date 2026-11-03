@@ -109,6 +109,7 @@ export function organizationSchema() {
     areaServed: "Worldwide",
     address: {
       "@type": "PostalAddress",
+      addressLocality: "Islamabad",
       addressCountry: "PK",
     },
     sameAs: [],

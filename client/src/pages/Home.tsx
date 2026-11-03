@@ -31,14 +31,11 @@ import { usePageSeo } from "@/hooks/usePageSeo";
 import {
   DEFAULT_DESCRIPTION,
   DEFAULT_TITLE,
-  faqPageSchema,
-  organizationSchema,
-  websiteSchema,
 } from "@/lib/seo";
 import { Link } from "wouter";
 
 /**
- * DESIGN PHILOSOPHY: Octaloop-Style Layout with Orange & Black Gvstudios Branding
+ * DESIGN PHILOSOPHY: Octaloop-Style Layout with Orange & Black GV Studio Branding
  * Features dashed borders, grid layouts, featured service sections, and advanced animations
  */
 
@@ -48,49 +45,46 @@ export default function Home() {
   const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
   const [isIndustriesMenuOpen, setIsIndustriesMenuOpen] = useState(false);
 
+  // Anonymized highlights from real delivery work — not fabricated named quotes.
   const testimonials = [
     {
-      text: "Gvstudios delivered an outstanding AI-powered solution with seamless integration. Their team's technical expertise and collaborative approach made the project a success.",
-      author: "Sarah Chen",
-      title: "VP of AI, TechCorp"
+      text: "Tier-1 Pakistani telecom operator: real-time charging and mediation platform supporting high-volume subscriber traffic with telecom-grade reliability.",
+      author: "Telecom BSS program",
+      title: "Charging & mediation"
     },
     {
-      text: "Working with Gvstudios was exceptional. Their professionalism and deep understanding of ML systems transformed our data infrastructure completely.",
-      author: "Michael Rodriguez",
-      title: "CTO, FinanceHub"
+      text: "National electronic toll and weigh-in-motion (ETTM / WIM) systems: roadside capture, enforcement workflows, and backend settlement for highway operators.",
+      author: "Transport infrastructure",
+      title: "Tolling & WIM"
     },
     {
-      text: "Gvstudios delivered exceptional results with unmatched technical expertise. Their collaborative approach ensured outcomes that perfectly aligned with our vision.",
-      author: "Priya Patel",
-      title: "Head of Innovation, RetailGlobal"
+      text: "Enterprise AI and backend systems for operators that need on-prem or edge deployment, strong observability, and production support — not slideware prototypes.",
+      author: "Enterprise delivery",
+      title: "AI & distributed systems"
     },
-    {
-      text: "The AI automation platform Gvstudios built for us reduced operational costs by 40%. Truly outstanding work and partnership.",
-      author: "David Thompson",
-      title: "CEO, LogisticsPro"
-    }
   ];
 
+  // FAQ answers must match the FAQPage JSON-LD in index.html word for word.
   const faqs = [
     {
-      question: "What AI services does Gvstudios provide?",
+      question: "What AI services does GV Studio provide?",
       answer: "We specialize in machine learning, deep learning, AI automation, data engineering, and AI governance. Our solutions span predictive analytics, computer vision, NLP, and autonomous systems."
     },
     {
-      question: "How do I get started with Gvstudios?",
+      question: "How do I get started with GV Studio?",
       answer: "Contact our team for a free consultation. We'll discuss your business goals, assess your data landscape, and propose a tailored AI strategy."
     },
     {
       question: "How can AI solutions benefit my business?",
-      answer: "AI can automate processes, improve decision-making, enhance customer experiences, and unlock insights from your data. Our solutions typically deliver 30-50% efficiency gains."
+      answer: "AI can automate processes, improve decision-making, enhance customer experiences, and unlock insights from your data. Our solutions typically deliver measurable efficiency gains."
     },
     {
-      question: "What makes Gvstudios different?",
-      answer: "We combine deep technical expertise with industry knowledge. Our 280+ specialists deliver production-ready AI systems with 99%+ accuracy and 24/7 support."
+      question: "What makes GV Studio different?",
+      answer: "We combine deep technical expertise with industry knowledge, delivering production-ready AI and telecom-grade backend systems with ongoing support."
     },
     {
       question: "Which industries do you serve?",
-      answer: "We work across 12+ industries including healthcare, finance, manufacturing, retail, energy, telecom, government, and more."
+      answer: "We work across industries including telecom, healthcare, finance, manufacturing, retail, energy, government, and more."
     }
   ];
 
@@ -102,17 +96,18 @@ export default function Home() {
     tags: ["GenAI", "MLOps", "Computer Vision", "NLP"],
   };
 
+  // Only list services that have real /services/:slug pages (matches sitemap).
   const services = [
+    { title: "Software Development", desc: "Custom backend & distributed systems", icon: "◈", image: "https://www.octaloop.io/assets/service-consultancy-E4sfdVQS.jpg" },
     { title: "IT Consultancy", desc: "Strategic technology advisory", icon: "⚙", image: "https://www.octaloop.io/assets/service-consultancy-E4sfdVQS.jpg" },
     { title: "Cybersecurity", desc: "Enterprise-grade protection", icon: "🛡", image: "https://www.octaloop.io/assets/service-cybersecurity-BBi4wjd2.jpg" },
-    { title: "UI/UX & Design", desc: "Stunning digital experiences", icon: "✎", image: "https://www.octaloop.io/assets/service-design-BSMSFrb-.jpg" },
+    { title: "Blockchain", desc: "Smart contracts & chain architecture", icon: "⛓", image: "https://www.octaloop.io/assets/service-web3-P2A4mAbw.jpg" },
     { title: "Sales & Marketing", desc: "Data-driven growth", icon: "📈", image: "https://www.octaloop.io/assets/service-marketing-D2CadWla.jpg" },
-    { title: "Web 3.0 Development", desc: "Blockchain, dApps & smart contracts", icon: "⛓", image: "https://www.octaloop.io/assets/service-web3-P2A4mAbw.jpg" },
+    { title: "Web 3.0 Development", desc: "dApps & decentralized products", icon: "◉", image: "https://www.octaloop.io/assets/service-web3-P2A4mAbw.jpg" },
     { title: "Quantum Computing", desc: "Next-gen algorithms", icon: "⚛", image: "https://www.octaloop.io/assets/service-quantum-DGf_VO8N.jpg" },
     { title: "Quality Assurance", desc: "Automated & manual testing", icon: "✓", image: "https://www.octaloop.io/assets/service-qa-RU_gLabG.jpg" },
     { title: "Mobile & Game Dev", desc: "Cross-platform apps & games", icon: "📱", image: "https://www.octaloop.io/assets/service-mobile-Bnsz5aK8.jpg" },
-    { title: "Internet of Things", desc: "Smart devices & edge computing", icon: "◍", image: "https://www.octaloop.io/assets/service-iot-DKuVrN9C.jpg" },
-    { title: "Augmented Reality", desc: "Immersive AR/VR experiences", icon: "◌", image: "https://www.octaloop.io/assets/service-ar-BHdXMvB9.jpg" },
+    { title: "IT Staffing", desc: "Dedicated engineers & team extension", icon: "◎", image: "https://www.octaloop.io/assets/service-consultancy-E4sfdVQS.jpg" },
     { title: "Digital Twin", desc: "Virtual replicas & simulations", icon: "▣", image: "https://www.octaloop.io/assets/digital-twin-hero-BovXLGVy.jpg" },
     { title: "GIS & Geospatial", desc: "Location intelligence & mapping", icon: "⌖", image: "https://www.octaloop.io/assets/gis-hero-DEMxVNSu.jpg" }
   ];
@@ -150,11 +145,12 @@ export default function Home() {
     },
   ];
 
+  // Organization / WebSite / FAQ JSON-LD already live in index.html for crawlers.
+  // Do not re-inject duplicates from React.
   usePageSeo({
     title: DEFAULT_TITLE,
     description: DEFAULT_DESCRIPTION,
     path: "/",
-    jsonLd: [organizationSchema(), websiteSchema(), faqPageSchema(faqs)],
   });
 
   const industries = [
@@ -229,17 +225,17 @@ export default function Home() {
   ];
 
   const caseStudies = [
-    { category: "Healthcare AI", client: "MediTech Solutions", projects: "40+", description: "Diagnostic AI system using deep learning" },
-    { category: "Financial ML", client: "FinServe Global", projects: "35+", description: "Fraud detection processing 1M+ transactions daily" },
-    { category: "Supply Chain AI", client: "LogisticsPro", projects: "20+", description: "Demand forecasting reducing inventory costs by 35%" },
-    { category: "Retail AI", client: "RetailHub", projects: "10+", description: "Personalization engine driving 40% engagement increase" },
-    { category: "Manufacturing AI", client: "IndustryTech", projects: "10+", description: "Predictive maintenance preventing equipment failures" },
-    { category: "Energy AI", client: "PowerGrid Solutions", projects: "8+", description: "Load forecasting reducing energy waste by 25%" }
+    { category: "Telecom BSS", client: "Tier-1 Pakistani mobile operator", projects: "Production", description: "Real-time charging / mediation platform for high-volume subscriber traffic" },
+    { category: "Telecom BSS", client: "Major Pakistani mobile operator", projects: "Production", description: "Billing and mediation integration work across operator-grade backends" },
+    { category: "Tolling", client: "National highway / ETTM program", projects: "Production", description: "Electronic toll and weigh-in-motion (WIM) capture, enforcement, and settlement" },
+    { category: "Enterprise AI", client: "Confidential enterprise client", projects: "Delivery", description: "On-prem / edge AI deployment where data residency and latency matter" },
+    { category: "Backend systems", client: "Regional operator programs", projects: "Delivery", description: "Distributed services, observability, and telecom-grade reliability patterns" },
+    { category: "Digital transformation", client: "UAE & Pakistan engagements", projects: "Ongoing", description: "Custom software and AI systems for teams that need production ownership" }
   ];
 
   const leaders = [
-    { name: "Awais Maqsood", role: "Founder & CEO", expertise: "AI Architecture & Strategy", image: `${import.meta.env.BASE_URL}awais-maqsood.png` },
-    { name: "Waleed Waheed", role: "Founder & CTO", expertise: "ML Engineering & Infrastructure", image: `${import.meta.env.BASE_URL}waleed-waheed.png` },
+    { name: "Awais Maqsood", role: "Co-founder & Technical Lead", expertise: "AI Architecture & Strategy", image: "/awais-maqsood.webp" },
+    { name: "Waleed Waheed", role: "Co-founder", expertise: "ML Engineering & Infrastructure", image: "/waleed-waheed.webp" },
   ];
 
   const industryMenuIcons = [
@@ -290,15 +286,15 @@ export default function Home() {
     "linear-gradient(145deg, rgba(12,12,12,0.78) 0%, rgba(15,23,42,0.58) 58%, rgba(245,158,11,0.14) 100%)",
   ];
   const contactEmail = "awaismaqsood91@gmail.com";
-  const contactMailto = `mailto:${contactEmail}?subject=${encodeURIComponent("Website Inquiry - Gvstudios")}`;
+  const contactMailto = `mailto:${contactEmail}?subject=${encodeURIComponent("Website Inquiry - GV Studio")}`;
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white border-b-2 border-orange-200 animate-slide-in-down">
         <div className="container flex items-center justify-between py-4 md:py-6">
-          <Link href="/" className="flex items-center" aria-label="Gvstudios home">
-            <img src={`${import.meta.env.BASE_URL}gv-logo.png`} alt="Gvstudios - AI and IT solutions company" className="h-12 w-auto md:h-14" />
+          <Link href="/" className="flex items-center" aria-label="GV Studio home">
+            <img src="/gv-logo.png" alt="GV Studio - AI and IT solutions company" width="160" height="56" className="h-12 w-auto md:h-14" />
           </Link>
           <div className="hidden md:flex items-center gap-8 text-sm">
             <div
@@ -399,6 +395,14 @@ export default function Home() {
             </div>
             <a href="#portfolio" className="text-black hover:text-amber-500 transition-colors">Case Studies</a>
             <a href="#about" className="text-black hover:text-amber-500 transition-colors">About Us</a>
+            <a
+              href="https://bots.gvstudio.live/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black hover:text-amber-500 transition-colors"
+            >
+              Bots
+            </a>
             <a href="#contact" className="text-black hover:text-amber-500 transition-colors">Contact</a>
           </div>
           <Button asChild className="bg-amber-500 hover:bg-amber-600 text-black font-semibold btn-interactive">
@@ -417,19 +421,18 @@ export default function Home() {
             loop
             muted
             playsInline
-            aria-label="Gvstudios AI and software engineering background video"
+            aria-label="GV Studio AI and software engineering background video"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/75 to-white/55" />
 
           <div className="container relative z-10">
             <div className="max-w-3xl">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-black animate-fade-in-up">
-                Empowering The Next
-                <br />
-                Era Of <span className="text-amber-500">AI & IT Solutions</span>
+                AI &amp; Custom Software{" "}
+                <span className="text-amber-500">Development Company</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl animate-fade-in-up">
-                Gvstudios is a global AI and IT solutions company delivering custom machine learning, software development, cybersecurity, and digital transformation services that help businesses build, scale, and innovate.
+                Empowering the next era of AI &amp; IT solutions. GV Studio delivers custom machine learning, software development, cybersecurity, and digital transformation for teams that need production systems.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up">
                 <Button asChild className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-6 text-base btn-interactive">
@@ -459,25 +462,25 @@ export default function Home() {
               Fueling Success Through Innovative <span className="text-amber-500">Technology Solutions</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-600 mb-16 leading-relaxed">
-              At Gvstudios, we transform the way organizations operate through innovative technology services spanning AI, Machine Learning, Data Engineering, and beyond. Our expertise fuels growth, enhances efficiency, and drives measurable success across industries.
+              At GV Studio, we transform how organizations operate through AI, machine learning, data engineering, and telecom-grade backend systems. Our work focuses on measurable delivery across Pakistan, the UAE, and worldwide.
             </p>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
               <div className="text-center stagger-item animate-fade-in-up">
-                <div className="text-5xl md:text-6xl font-bold text-amber-500 mb-3 font-mono">2500+</div>
-                <p className="text-gray-600 font-semibold text-base">Projects Delivered</p>
+                <div className="text-5xl md:text-6xl font-bold text-amber-500 mb-3 font-mono">Telecom</div>
+                <p className="text-gray-600 font-semibold text-base">BSS &amp; charging systems</p>
               </div>
               <div className="text-center stagger-item animate-fade-in-up">
-                <div className="text-5xl md:text-6xl font-bold text-amber-500 mb-3 font-mono">800+</div>
-                <p className="text-gray-600 font-semibold text-base">Clients Worldwide</p>
+                <div className="text-5xl md:text-6xl font-bold text-amber-500 mb-3 font-mono">ETTM</div>
+                <p className="text-gray-600 font-semibold text-base">Tolling &amp; WIM platforms</p>
               </div>
               <div className="text-center stagger-item animate-fade-in-up">
-                <div className="text-5xl md:text-6xl font-bold text-amber-500 mb-3 font-mono">20+</div>
-                <p className="text-gray-600 font-semibold text-base">Industries Served</p>
+                <div className="text-5xl md:text-6xl font-bold text-amber-500 mb-3 font-mono">Edge AI</div>
+                <p className="text-gray-600 font-semibold text-base">On-prem deployments</p>
               </div>
               <div className="text-center stagger-item animate-fade-in-up">
-                <div className="text-5xl md:text-6xl font-bold text-amber-500 mb-3 font-mono">280+</div>
-                <p className="text-gray-600 font-semibold text-base">Tech Experts</p>
+                <div className="text-5xl md:text-6xl font-bold text-amber-500 mb-3 font-mono">PK + UAE</div>
+                <p className="text-gray-600 font-semibold text-base">Regional delivery</p>
               </div>
             </div>
           </div>
@@ -492,7 +495,7 @@ export default function Home() {
                 Engineering the <span className="text-amber-500 italic">future</span>, one service at a time
               </h2>
               <p className="text-gray-600 max-w-3xl mx-auto mt-6">
-                From AI and blockchain to immersive AR and enterprise infrastructure - end-to-end solutions for startups and Fortune 500s alike.
+                From AI and software development to cybersecurity and enterprise infrastructure — end-to-end solutions for startups and operators alike.
               </p>
             </div>
 
@@ -753,7 +756,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 AI Projects That <span className="text-amber-500">Matter</span>
               </h2>
-              <p className="text-gray-600">217+ AI projects delivered across 12+ industries</p>
+              <p className="text-gray-600">Selected delivery across telecom, tolling, and enterprise AI</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -808,9 +811,9 @@ export default function Home() {
 
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                 <div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">Ready to Accelerate Your Digital Transformation?</h3>
+                  <p className="text-3xl md:text-4xl font-bold text-white mb-2">Ready to accelerate your next build?</p>
                   <p className="text-white/90 max-w-2xl">
-                    Partner with Gvstudios to build next-gen solutions powered by AI, blockchain, and cloud technologies.
+                    Partner with GV Studio to ship production AI, backend, and enterprise systems.
                   </p>
                 </div>
                 <Button asChild className="bg-white hover:bg-gray-100 text-black font-semibold px-8 py-6 rounded-full self-start md:self-auto">
@@ -833,7 +836,7 @@ export default function Home() {
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                What Our <span className="text-amber-500">Clients Say</span>
+                Delivery <span className="text-amber-500">Highlights</span>
               </h2>
             </div>
 
@@ -880,7 +883,7 @@ export default function Home() {
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Minds Behind <span className="text-amber-500">Gvstudios</span>
+                Minds Behind <span className="text-amber-500">GV Studio</span>
               </h2>
               <p className="text-gray-600">Meet Our Leadership</p>
             </div>
@@ -894,7 +897,15 @@ export default function Home() {
                 >
                   <div className="w-24 h-24 bg-amber-100 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
                     {leader.image ? (
-                      <img src={leader.image} alt={leader.name} className="h-full w-full object-cover" />
+                      <img
+                        src={leader.image}
+                        alt={`${leader.name}, ${leader.role}`}
+                        width="400"
+                        height="400"
+                        loading="lazy"
+                        decoding="async"
+                        className="h-full w-full object-cover"
+                      />
                     ) : (
                       <span className="text-4xl text-amber-500">👤</span>
                     )}
@@ -987,8 +998,8 @@ export default function Home() {
         <div className="container">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div className="animate-fade-in-up">
-              <img src={`${import.meta.env.BASE_URL}gv-logo.png`} alt="Gvstudios logo" className="h-14 w-auto mb-4" />
-              <h4 className="font-bold mb-4 text-amber-500">Gvstudios</h4>
+              <img src="/gv-logo.png" alt="GV Studio logo" width="160" height="56" className="h-14 w-auto mb-4" />
+              <h4 className="font-bold mb-4 text-amber-500">GV Studio</h4>
               <p className="text-white/70 text-sm">
                 Enterprise AI solutions for the next generation of intelligent systems.
               </p>
@@ -999,6 +1010,8 @@ export default function Home() {
                 <li><Link href="/services/artificial-intelligence" className="hover:text-amber-500 transition-colors">Artificial Intelligence</Link></li>
                 <li><Link href="/services/software-development" className="hover:text-amber-500 transition-colors">Software Development</Link></li>
                 <li><Link href="/services/cybersecurity" className="hover:text-amber-500 transition-colors">Cybersecurity</Link></li>
+                <li><Link href="/services/blockchain" className="hover:text-amber-500 transition-colors">Blockchain</Link></li>
+                <li><Link href="/services/it-staffing" className="hover:text-amber-500 transition-colors">IT Staffing</Link></li>
                 <li><Link href="/services/it-consultancy" className="hover:text-amber-500 transition-colors">IT Consultancy</Link></li>
               </ul>
             </div>
@@ -1008,6 +1021,16 @@ export default function Home() {
                 <li><a href="#about" className="hover:text-amber-500 transition-colors">About Us</a></li>
                 <li><a href="#portfolio" className="hover:text-amber-500 transition-colors">Case Studies</a></li>
                 <li><a href="#services" className="hover:text-amber-500 transition-colors">Services</a></li>
+                <li>
+                  <a
+                    href="https://bots.gvstudio.live/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-amber-500 transition-colors"
+                  >
+                    Voice Agents / Bots
+                  </a>
+                </li>
                 <li><a href="#contact" className="hover:text-amber-500 transition-colors">Contact</a></li>
               </ul>
             </div>
@@ -1022,7 +1045,7 @@ export default function Home() {
           </div>
 
           <div className="border-t-2 border-white/10 pt-8 text-center text-white/70 text-sm">
-            <p>&copy; 2026 Gvstudios. All rights reserved. | Enterprise AI & IT solutions at <a href="https://gvstudio.live" className="hover:text-amber-500">gvstudio.live</a></p>
+            <p>&copy; 2026 GV Studio. All rights reserved. | Enterprise AI & IT solutions at <a href="https://gvstudio.live" className="hover:text-amber-500">gvstudio.live</a></p>
           </div>
         </div>
       </footer>

@@ -290,6 +290,53 @@ function writePage(page: PageSpec, template: string) {
   fs.writeFileSync(path.join(outDir, "index.html"), html, "utf8");
 }
 
+function writeSitemap() {
+  const lastmod = new Date().toISOString().slice(0, 10);
+  const urls = [
+    { loc: `${SITE_URL}/`, changefreq: "weekly", priority: "1.0" },
+    ...allServices.map((service) => ({
+      loc: `${SITE_URL}/services/${service.slug}`,
+      changefreq: "monthly",
+      priority: "0.8",
+    })),
+  ];
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls
+  .map(
+    (url) => `  <url>
+    <loc>${url.loc}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>${url.changefreq}</changefreq>
+    <priority>${url.priority}</priority>
+  </url>`,
+  )
+  .join("\n")}
+</urlset>
+`;
+
+  const publicSitemap = path.resolve(__dirname, "../client/public/sitemap.xml");
+  fs.writeFileSync(publicSitemap, xml, "utf8");
+  fs.writeFileSync(path.join(distDir, "sitemap.xml"), xml, "utf8");
+  console.log(`Wrote sitemap.xml (${urls.length} urls, lastmod ${lastmod})`);
+}
+
+function assertUniquePageSeo(pages: PageSpec[]) {
+  const titles = new Set<string>();
+  const descriptions = new Set<string>();
+  for (const page of pages) {
+    if (titles.has(page.title)) {
+      throw new Error(`Duplicate page title: ${page.title}`);
+    }
+    if (descriptions.has(page.description)) {
+      throw new Error(`Duplicate meta description: ${page.description}`);
+    }
+    titles.add(page.title);
+    descriptions.add(page.description);
+  }
+}
+
 function main() {
   if (!fs.existsSync(templatePath)) {
     throw new Error(`Missing build output: ${templatePath}. Run vite build first.`);
@@ -297,12 +344,14 @@ function main() {
 
   const template = fs.readFileSync(templatePath, "utf8");
   const pages = buildPages();
+  assertUniquePageSeo(pages);
 
   for (const page of pages) {
     writePage(page, template);
     console.log(`prerendered ${page.path}`);
   }
 
+  writeSitemap();
   console.log(`Generated ${pages.length} crawlable HTML pages in ${distDir}`);
 }
 

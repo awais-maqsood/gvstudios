@@ -26,6 +26,7 @@ import {
 import { useState, useEffect } from "react";
 import { useScrollAnimation, useStaggerAnimation } from "@/hooks/useScrollAnimation";
 import ContactForm from "@/components/ContactForm";
+import ProductHuntBadge from "@/components/ProductHuntBadge";
 import { serviceCategories, serviceTitleToSlug } from "@/data/services";
 import { usePageSeo } from "@/hooks/usePageSeo";
 import {
@@ -1059,7 +1060,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t-2 border-white/10 pt-8 text-center text-white/70 text-sm">
+          <div className="border-t-2 border-white/10 pt-8 flex flex-col items-center gap-6 text-center text-white/70 text-sm">
+            <ProductHuntBadge />
             <p>&copy; 2026 GV Studio. All rights reserved. | Enterprise AI & IT solutions at <a href="https://gvstudio.live" className="hover:text-amber-500">gvstudio.live</a></p>
           </div>
         </div>

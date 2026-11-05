@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import fs from "node:fs";
 import path from "node:path";
-import { defineConfig, type Plugin, type ViteDevServer } from "vite";
+import { defineConfig, loadEnv, type Plugin, type ViteDevServer } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
 // =============================================================================
@@ -203,8 +203,70 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
+/**
+ * Inject Google Analytics + Search Console / Bing verification only when env is set.
+ * Missing values omit tags entirely (no broken %VITE_*% placeholders).
+ */
+function vitePluginSeoInject(env: Record<string, string>): Plugin {
+  return {
+    name: "gvstudio-seo-inject",
+    transformIndexHtml(html) {
+      const tags: Array<{
+        tag: string;
+        attrs?: Record<string, string | boolean>;
+        children?: string;
+        injectTo: "head" | "body";
+      }> = [];
+
+      const googleVerify = env.VITE_GOOGLE_SITE_VERIFICATION?.trim();
+      if (googleVerify) {
+        tags.push({
+          tag: "meta",
+          attrs: {
+            name: "google-site-verification",
+            content: googleVerify,
+          },
+          injectTo: "head",
+        });
+      }
+
+      const bingVerify = env.VITE_BING_SITE_VERIFICATION?.trim();
+      if (bingVerify) {
+        tags.push({
+          tag: "meta",
+          attrs: {
+            name: "msvalidate.01",
+            content: bingVerify,
+          },
+          injectTo: "head",
+        });
+      }
+
+      const gaId = env.VITE_GA_MEASUREMENT_ID?.trim();
+      if (gaId) {
+        tags.push({
+          tag: "script",
+          attrs: {
+            async: true,
+            src: `https://www.googletagmanager.com/gtag/js?id=${gaId}`,
+          },
+          injectTo: "head",
+        });
+        tags.push({
+          tag: "script",
+          children: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',${JSON.stringify(gaId)});`,
+          injectTo: "head",
+        });
+      }
+
+      return { html, tags };
+    },
+  };
+}
+
 export default defineConfig(({ mode }) => {
   const isDev = mode === "development";
+  const env = loadEnv(mode, PROJECT_ROOT, "");
 
   return {
     base: "/",
@@ -213,6 +275,7 @@ export default defineConfig(({ mode }) => {
       react(),
       tailwindcss(),
       jsxLocPlugin(),
+      vitePluginSeoInject(env),
       ...(isDev
         ? [
             vitePluginManusRuntime(),
